@@ -5,10 +5,10 @@ body{font-size:20px;line-height:1.6}
 /* Use one anchor offset; do not add scroll-padding and scroll-margin together. */
 html:has(.story-intro){scroll-padding-top:0}
 #intro.story-intro{padding-top:20px;scroll-margin-top:calc(var(--header-height) + 16px)}
-body:not(.chapter-page)>.hero{min-height:calc((100svh - var(--header-height))*0.88)}
+body:not(.chapter-page)>.hero{min-height:calc(100svh - var(--header-height));align-items:start;padding-top:40px}
 .start:hover{color:var(--accent);background:var(--panel)}
 .start:active{transform:translateY(1px)}
-.intermediate-insight{border-left:2px solid var(--accent);padding-left:20px;margin:30px 0}
+.intermediate-insight{margin:30px 0}
 .shipyard-figure .attribution{display:block;margin-top:8px;font-size:12px;line-height:1.6}
 .timeline{background:transparent;padding:22px 0 0;gap:0;position:relative;grid-template-columns:repeat(3,minmax(0,1fr))}
 .timeline>div{position:relative;border-top:1px solid var(--accent);padding:26px 16px 0 0}
@@ -50,7 +50,7 @@ img{max-width:100%;height:auto}
 @media(max-width:900px){
  body{--reading-left:var(--page-gutter)}
  #intro.story-intro{scroll-margin-top:calc(var(--header-height) + 76px)}
- body:not(.chapter-page)>.hero{display:flex;flex-direction:column;align-items:stretch;justify-content:center;padding-top:110px;padding-bottom:50px}
+ body:not(.chapter-page)>.hero{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding-top:110px;padding-bottom:50px}
  .hero .hero-nav{top:var(--header-height);left:0;width:100%;max-width:none;max-height:calc(100dvh - var(--header-height));padding:10px var(--page-gutter);border-bottom:1px solid var(--panel);overflow-y:auto}
  .contents-title{display:none}.contents-toggle{display:flex;justify-content:space-between;align-items:center;width:100%;padding:8px 0;background:var(--bg);color:var(--ink);font-size:14px;border-radius:0}
  .hero-nav #contents-links{display:none}.hero-nav.menu-open #contents-links{display:block;padding:5px 0 12px}
