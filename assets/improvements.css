@@ -1,0 +1,76 @@
+/* Targeted course improvements; existing palette and reading grid are retained. */
+body{font-size:20px;line-height:1.6}
+.prose>p{margin-bottom:20px}
+.story-intro,.story-intro>p{font-size:20px;line-height:1.6}
+/* Use one anchor offset; do not add scroll-padding and scroll-margin together. */
+html:has(.story-intro){scroll-padding-top:0}
+#intro.story-intro{padding-top:20px;scroll-margin-top:calc(var(--header-height) + 16px)}
+body:not(.chapter-page)>.hero{min-height:calc((100svh - var(--header-height))*0.88)}
+.start:hover{color:var(--accent);background:var(--panel)}
+.start:active{transform:translateY(1px)}
+.intermediate-insight{border-left:2px solid var(--accent);padding-left:20px;margin:30px 0}
+.shipyard-figure .attribution{display:block;margin-top:8px;font-size:12px;line-height:1.6}
+.timeline{background:transparent;padding:22px 0 0;gap:0;position:relative;grid-template-columns:repeat(3,minmax(0,1fr))}
+.timeline>div{position:relative;border-top:1px solid var(--accent);padding:26px 16px 0 0}
+.timeline>div:before{content:'';position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.timeline b{font-size:24px}
+.answer-toggle{display:inline-block;border:1px solid var(--ink);padding:10px 14px;text-decoration:none;font:15px/1.5 Arial,sans-serif;border-radius:3px}
+.answer-toggle:before{content:'+';display:inline-block;width:22px;font-size:18px}
+details[open]>.answer-toggle:before{content:'−'}
+.answer-toggle:hover{background:var(--bg)}
+details>summary{min-height:32px;line-height:1.5}
+details>p{margin-top:18px}
+.collegia-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;padding:0;margin:24px 0 32px;list-style:none}
+.collegia-cards li{grid-column:span 2;border:1px solid #cecbbf;padding:20px;min-width:0}
+.collegia-cards li:nth-child(n+4){grid-column:span 3}
+.card-number{font-size:12px;color:var(--accent);letter-spacing:1px}
+.collegia-cards h3{font:20px/1.3 var(--serif);margin:12px 0;overflow-wrap:anywhere}
+.collegia-cards p{font-size:15px;line-height:1.5;margin:0}
+.editorial-heading{font:24px/1.3 var(--serif);margin-top:32px}
+.reform-scheme{margin-top:40px}
+.scheme-text{margin:24px 0 40px}
+.education-milestones{grid-template-columns:repeat(3,minmax(0,1fr));padding:24px;gap:22px}
+.education-milestones h3{font-size:23px;overflow-wrap:anywhere}
+.education-milestones p{font-size:15px}
+.selected-chain{margin:28px 0;font-size:15px;line-height:1.5}
+.selected-chain ol{list-style:none;padding:0;margin:12px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.selected-chain li{background:var(--bg);padding:14px;position:relative;border:1px solid #cecbbf}
+.selected-chain li+li:before{content:'→';position:absolute;left:-25px;top:calc(50% - 12px);color:var(--accent)}
+.selected-chain small{display:block;color:var(--accent);margin-bottom:8px}
+.side-row label{border:2px solid transparent}
+.side-row label:has(input:checked){border-color:var(--accent)}
+.copy-actions{margin-top:20px}
+.copy-actions p{margin:12px 0 0}
+.completion{padding:32px 0 24px}
+.completion h2{font-size:34px;margin:18px 0 24px}
+.completion p{font-size:18px;line-height:1.6}
+.completion .caption{font-size:14px}
+input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+img{max-width:100%;height:auto}
+@media(max-width:900px){
+ body{--reading-left:var(--page-gutter)}
+ #intro.story-intro{scroll-margin-top:calc(var(--header-height) + 76px)}
+ body:not(.chapter-page)>.hero{display:flex;flex-direction:column;align-items:stretch;justify-content:center;padding-top:110px;padding-bottom:50px}
+ .hero .hero-nav{top:var(--header-height);left:0;width:100%;max-width:none;max-height:calc(100dvh - var(--header-height));padding:10px var(--page-gutter);border-bottom:1px solid var(--panel);overflow-y:auto}
+ .contents-title{display:none}.contents-toggle{display:flex;justify-content:space-between;align-items:center;width:100%;padding:8px 0;background:var(--bg);color:var(--ink);font-size:14px;border-radius:0}
+ .hero-nav #contents-links{display:none}.hero-nav.menu-open #contents-links{display:block;padding:5px 0 12px}
+ .hero .hero-nav a{font-size:14px;padding:12px 0}.hero{display:block;padding-top:110px}.chapter-page article>section{padding-top:110px}
+ html{scroll-padding-top:calc(var(--header-height) + 80px)}
+ .choice-row{grid-template-columns:1fr}.compare:not(.education-milestones){grid-template-columns:1fr}
+}
+@media(max-width:650px){
+ body{font-size:18px}.story-intro,.story-intro>p{font-size:18px}
+ .timeline{grid-template-columns:1fr;padding:0;gap:0}
+ .timeline>div{border-top:0;border-left:1px solid var(--accent);padding:0 0 28px 24px;margin-left:5px}
+ .timeline>div:last-child{padding-bottom:0}.timeline>div:before{top:8px;left:-5px}
+ .collegia-cards{grid-template-columns:1fr}.collegia-cards li,.collegia-cards li:nth-child(n+4){grid-column:auto}
+ .education-milestones{grid-template-columns:1fr}.education-milestones>div+div{border-top:1px solid #cecbbf;padding-top:22px}
+ .selected-chain ol{grid-template-columns:1fr;gap:28px}.selected-chain li+li:before{content:'↓';left:calc(50% - 5px);top:-28px}
+ .government-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .government-table table,.government-table tbody,.government-table tr,.government-table td{display:block;width:100%}
+ .government-table tr{border:1px solid #cecbbf;margin-bottom:20px}
+ .government-table td{padding:18px;font-size:16px}.government-table td+td{border-left:0;background:var(--panel)}
+ .government-table td:before{content:attr(data-period);display:block;font:20px/1.4 var(--serif);margin-bottom:12px}
+ .government-table td strong{font-size:14px}.copy-actions button{width:100%}
+}
+
